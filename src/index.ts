@@ -22,3 +22,26 @@ const port = Number(process.env.PORT) || 3000
 })()
 
 process.on("SIGINT", async () => { await closeDB(); process.exit(0) })
+
+
+// överst, efter express():
+app.use(express.json())
+
+// Uppgift 4: dynamisk parameter
+app.get("/echo/:id", (req, res) => {
+  const id = req.params.id
+  res.json({ id })
+})
+
+// Uppgift 5: validering + return
+app.get("/number/:id", (req, res) => {
+  const id = Number(req.params.id)
+  if (isNaN(id)) { res.status(400).send("Not a number"); return }
+  res.json({ id })
+})
+
+// Uppgift 6: POST som skapar User och returnerar 201
+app.post("/users", (_req, res) => {
+  const user = { id: crypto.randomUUID(), name: "Alice" }
+  res.status(201).json(user)
+})
