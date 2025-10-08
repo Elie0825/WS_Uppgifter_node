@@ -11,12 +11,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "mongodb": "^6.20.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.23",
-    "@types/node": "^24.3.1",
+    "@types/node": "^24.7.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
   }
 }
